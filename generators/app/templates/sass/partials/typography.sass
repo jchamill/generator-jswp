@@ -1,0 +1,52 @@
+sup
+  font-size: 0.550em
+
+// Heading styles.
+h1, h2, h3, h4, h5, h6
+  line-height: 1.3em
+  font-weight: 700
+  margin: 0
+  color: $dark-blue
+
+h1, h2, h3, h4, h5, h6
+  a, a:link, a:visited
+    color: $dark-blue
+
+h1
+  font-size: 2.2em
+  margin: 0 0 0.5em
+h2
+  font-size: 1.778em
+  line-height: 1.1
+  margin: 0 0 0.25em 0
+h3
+  font-size: 1.444em
+  margin-bottom: 1em
+h4
+  font-size: 1.2em
+  margin-bottom: 0.25em
+h5
+  font-size: 1.1em
+  font-weight: 400
+h6
+  font-size: 1em
+  font-weight: 400
+
+h3.widget-title
+  font-size: 2.389em
+  font-weight: 300
+  line-height: 1.3
+  margin-bottom: 1em
+  @include after-bar
+  sup
+    font-size: 0.489em
+
+.remove-after-bar h3.widget-title
+  &:after
+    display: none
+
+// Paragraph styles.
+p
+  margin: 0 0 1.5em 0
+  &:last-child
+    margin-bottom: 0

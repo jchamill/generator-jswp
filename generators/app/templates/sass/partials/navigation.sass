@@ -1,0 +1,133 @@
+#site-navigation
+  position: fixed
+  top: 0
+  right: -300px
+  width: 300px
+  height: 100%
+  overflow-y: hidden // Could cause usability issues.
+  z-index: 50
+  background-color: $footer-color
+  padding: 65px 10px 15px 25px
+  transition: right $default-transition-timing $default-transition-easing 0s
+  body.open &
+    right: 0
+    box-shadow: 0 -15px 25px #000
+  li
+    display: block
+  a
+    font-size: 1.200em
+    color: rgba(255, 255, 255, 1)
+    text-transform: uppercase
+    letter-spacing: 1px
+  @include grid-media($desktop)
+    padding: 0
+    float: right
+    position: static
+    height: auto
+    width: auto
+    overflow-y: visible
+    background-color: transparent
+    transition: none
+    body.open &
+      box-shadow: none
+    li
+      display: inline-block
+      margin: 0
+  #menu-primary
+    li
+      margin-bottom: 1em
+    @include grid-media($desktop)
+      margin: 0
+      display: block
+      float: left
+      li
+        margin-bottom: 0
+        float: left
+        &.current-menu-item a
+          color: rgba(255, 255, 255, 0.75)
+          &:hover
+            color: rgba(255, 255, 255, 0.75)
+      a
+        padding-left: 50px
+        font-size: 0.800em
+        //font-weight: 600
+        .fixed-header &
+          display: block
+        &:hover
+          color: rgba(255, 255, 255, 0.75)
+          text-decoration: none
+
+#menu-toggle
+  position: absolute
+  top: 30px
+  right: 15px
+  z-index: 100
+  line-height: 15px
+  cursor: pointer
+  body.open &
+    position: fixed
+  @include grid-media($desktop)
+    display: none
+
+#hamburger
+  position: relative
+  height: 15px
+  width: 24px
+  display: inline-block
+  span
+    position: absolute
+    top: 0
+    left: 0
+    height: 3px
+    width: 100%
+    display: block
+    background-color: #fff
+    opacity: 1
+    transform: rotate(0deg)
+    transition: transform 500ms $default-transition-easing 0s, opacity 500ms $default-transition-easing 0s
+  span:nth-child(1)
+    body.open &
+      opacity: 0
+  span:nth-child(2)
+    top: 6px
+    body.open &
+      transform: rotate(45deg)
+  span:nth-child(3)
+    top: 6px
+    body.open &
+      transform: rotate(-45deg)
+  span:nth-child(4)
+    top: 12px
+    body.open &
+      opacity: 0
+
+// Slick slider dots.
+ul.slick-dots
+  text-align: center
+  margin: 0
+  li
+    position: relative
+    display: inline-block
+    width: 8px
+    height: 8px
+    margin: 0 10px
+    padding: 0
+    cursor: pointer
+    button
+      border-radius: 100px
+      font-size: 0
+      line-height: 0
+      display: block
+      width: 8px
+      height: 8px
+      padding: 2px
+      cursor: pointer
+      color: transparent
+      background-color: #fff
+      opacity: .2
+      border: 0
+      outline: none
+    &.slick-active
+      button
+        background-color: #fff
+        opacity: 1

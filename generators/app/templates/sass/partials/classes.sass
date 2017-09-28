@@ -1,0 +1,117 @@
+.top-only-padding
+  padding-top: $mobile-section-padding
+  @include grid-media($tablet)
+    padding-top: $tablet-section-padding
+  @include grid-media($desktop)
+    padding-top: $desktop-section-padding
+.bottom-only-padding
+  padding-bottom: $mobile-section-padding
+  @include grid-media($tablet)
+    padding-bottom: $tablet-section-padding
+  @include grid-media($desktop)
+    padding-bottom: $desktop-section-padding
+.top-bottom-padding,
+#primary
+  padding-top: $mobile-section-padding
+  padding-bottom: $mobile-section-padding
+  @include grid-media($tablet)
+    padding-top: $tablet-section-padding
+    padding-bottom: $tablet-section-padding
+  @include grid-media($desktop)
+    padding-top: $desktop-section-padding
+    padding-bottom: $desktop-section-padding
+
+.space-below-lg
+  margin-bottom: 5em
+.space-below-md
+  margin-bottom: 3em
+.hide-break-mobile
+  br
+    display: none
+    @include grid-media($tablet)
+      display: block
+.entry-content + .post-categories,
+#comments
+  margin-top: 1.5em
+.post-teaser,
+.post-meta
+  margin-bottom: 1.5em
+.post-thumbnail
+  margin-bottom: 1em
+.text-center
+  text-align: center
+.small-text
+  font-size: 0.778em
+.smallest-text
+  font-size: 0.667em
+  line-height: 1.833
+.medium-text
+  font-size: 0.889em
+  color: #454545
+  font-weight: 400
+  .small-text
+    font-size: 0.875em
+
+.event-date
+  color: $navy
+  font-size: 0.889em
+  text-transform: uppercase
+  font-weight: 700
+  letter-spacing: 3px
+  span
+    text-transform: none
+
+.modal-box
+  position: relative
+  background-color: #fff
+  color: #666666
+  padding: 40px 50px 45px
+  width: auto
+  max-width: 536px
+  margin: 20px auto
+  font-size: 0.722em
+  border-radius: 6px
+  box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.75)
+  h2
+    text-transform: uppercase
+    font-weight: normal
+    font-size: 1.846em
+    margin-bottom: 0.5em
+
+.mfp-zoom-in
+  .mfp-content
+    opacity: 0
+    transition: all 0.2s ease-in-out
+    transform: scale(0.8)
+  &.mfp-bg
+    opacity: 0
+    transition: all 0.3s ease-out
+  &.mfp-ready
+    .mfp-content
+      opacity: 1
+      transform: scale(1)
+    &.mfp-bg
+      opacity: 0.8
+  &.mfp-removing
+    .mfp-content
+      transform: scale(0.8)
+      opacity: 0
+    &.mfp-bg
+      opacity: 0
+
+.mobile-only
+  @include grid-media($tablet)
+    display: none
+
+.section-table
+  @include grid-media($tablet)
+    display: table
+    width: 100%
+.section-row
+  @include grid-media($tablet)
+    display: table-row
+    width: 100%
+.section-cell
+  @include grid-media($tablet)
+    display: table-cell
+    vertical-align: middle

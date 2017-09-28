@@ -1,0 +1,40 @@
+#site-footer
+  background-color: $footer-color
+  text-align: center
+  color: #fff
+  @include grid-media($desktop)
+    text-align: left
+  a
+    color: #fff
+    text-decoration: none
+    &:hover
+      text-decoration: underline
+
+#prefooter
+  background-color: $dark-gray
+  color: #fff
+  a
+    color: #fff
+  @include grid-media($desktop)
+    text-align: left
+
+#menu-footer
+  font-size: 0.889em
+  font-weight: 600
+  margin: 0
+  list-style: none
+  padding-bottom: 30px
+  @include grid-media($desktop)
+    float: left
+  li
+    margin-bottom: 1em
+    @include grid-media($desktop)
+      display: inline-block
+      margin-right: 58px
+
+#copyright
+  font-size: 0.889em
+  color: rgba(255, 255, 255, 0.6)
+  @include grid-media($desktop)
+    text-align: right
+    float: right

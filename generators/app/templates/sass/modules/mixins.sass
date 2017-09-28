@@ -1,0 +1,54 @@
+@mixin border-radius($top: 10px, $right: $top, $bottom: $top, $left: $right)
+  border-radius: $top $right $bottom $left
+  -moz-border-radius: $top $right $bottom $left
+  -webkit-border-top-left-radius: $top
+  -webkit-border-top-right-radius: $right
+  -webkit-border-bottom-right-radius: $bottom
+  -webkit-border-bottom-left-radius: $left
+
+@mixin alpha-background-color($color, $background)
+  $percent: alpha($color) * 100%
+  $opaque: opacify($color, 1)
+  $solid-color: mix($opaque, $background, $percent)
+  background-color: $solid-color
+  background-color: $color
+
+@mixin omega-reset($nth, $container-columns)
+  &:nth-child(#{$nth})
+    margin-right: flex-gutter($container-columns)
+  &:nth-child(#{$nth}+1)
+    clear: none
+
+@mixin after-bar($color: $red)
+  &:after
+    content: ''
+    display: block
+    width: 91px
+    border-bottom: 3px solid $color
+    margin: 28px 0
+
+@mixin btn
+  display: inline-block
+  background-color: $link-color
+  color: #fff
+  border: 0
+  border-radius: 0
+  padding: 0.944em 1.500em
+  margin-bottom: 12px
+  letter-spacing: 1px
+  text-decoration: none
+  text-transform: uppercase
+  font-size: 0.889em
+  text-align: center
+  min-width: 270px
+  font-weight: 600
+  -webkit-appearance: none
+  cursor: pointer
+  //transition: background-color $default-transition-timing $default-transition-easing, color $default-transition-timing $default-transition-easing
+  &:hover
+    background-color: $link-hover-color
+
+@mixin contain($width)
+  max-width: $width
+  margin-left: auto
+  margin-right: auto

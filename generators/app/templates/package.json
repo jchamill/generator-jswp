@@ -1,0 +1,22 @@
+{
+  "name": "<%= themeKey %>",
+  "version": "0.0.1",
+  "title": "<%= themeName %>",
+  "devDependencies": {
+    "autoprefixer": "^6.7.7",
+    "bourbon": "^4.3.4",
+    "bourbon-neat": "^2.1.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-front-end-modules": "^1.2.2",
+    "grunt-postcss": "^0.8.0"
+  },
+  "dependencies": {
+    "aos": "^2.2.0",
+    "fitvids": "^2.0.0",
+    "jquery-lazy": "^1.7.5",
+    "magnific-popup": "^1.1.0",
+    "slick-carousel": "^1.7.1"
+  }
+}

@@ -1,0 +1,40 @@
+// Full width pages.
+.siteorigin-panels
+  #primary
+    max-width: none
+    padding: 0
+
+// Default panel styles.
+.siteorigin-panels
+  #content
+    padding: 0
+    .panel-grid
+      margin-left: 0
+      margin-right: 0
+    .dl-row
+      //@include contain($contain-medium)
+      position: relative
+      .panel-grid-cell
+        padding: 0 15px
+        @include grid-media($tablet)
+          padding: 0
+      &.dl-fullwidth
+        max-width: none
+      //padding: 0 // Not sure why this was set, maybe it is not needed.
+      &.dl-contain-content
+        .panel-grid-cell
+          @include contain($contain-medium) // Add 30px for padding added by page builder.
+      &.contain-lg
+        .panel-grid-cell
+          @include contain($contain-large)
+
+.panel-row-style
+  background-position: center center
+
+.panel-grid-cell
+  @include grid-media($tablet)
+    margin-bottom: 30px
+    &:last-child
+      margin-bottom: 0
+  @include grid-media($desktop)
+    margin-bottom: 0

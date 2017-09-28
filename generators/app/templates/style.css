@@ -1,0 +1,11 @@
+/*
+Theme Name:         <%= themeName %>
+Theme URI:          <%= themeUri %>
+Description:        <%= themeDescription %>
+Version:            0.0.1
+Author:             Jackson Spalding
+Author URI:         https://www.jacksonspalding.com
+Text Domain:        <%= themeKey %>
+License:            MIT License
+License URI:        http://opensource.org/licenses/MIT
+*/

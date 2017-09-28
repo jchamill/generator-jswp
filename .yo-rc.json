@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "JC Hamill",
+      "authorEmail": "jchamill@creativeshampoo.com",
+      "authorUrl": ""
+    }
+  }
+}

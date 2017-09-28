@@ -1,0 +1,29 @@
+.btn
+  @include btn
+
+a.btn
+  color: #fff
+
+.btn-disabled
+  color: $light-gray
+  border-color: $light-gray
+  cursor: default
+  &:hover
+    color: $light-gray
+    border-color: $light-gray
+
+.btn-clear
+  color: $blue
+  border: 2px solid $blue
+  background-color: transparent
+  &:hover
+    color: #fff
+    background-color: #194a72
+    border-color: #e0e0e0
+a.btn-clear
+  color: $blue
+
+.buttons .btn
+  margin: 0 5px 1em 0
+  @include grid-media($desktop)
+    margin-bottom: 0
