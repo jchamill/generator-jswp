@@ -40,6 +40,9 @@ module.exports = class extends Generator {
   }
 
   writing() {
+    var base = this.props.themeKey;
+    this.destinationRoot(base);
+
     this.fs.copyTpl(
       this.templatePath('package.json'),
       this.destinationPath('package.json'), {
