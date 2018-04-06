@@ -1,4 +1,4 @@
-# generator-jswp [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+# generator-jswp
 > JS Wordpress Theme
 
 ## Installation
@@ -26,11 +26,3 @@ yo jswp
 ## License
 
 MIT © [JC Hamill]()
-
-
-[npm-image]: https://badge.fury.io/js/generator-jswp.svg
-[npm-url]: https://npmjs.org/package/generator-jswp
-[travis-image]: https://travis-ci.org/jchamill/generator-jswp.svg?branch=master
-[travis-url]: https://travis-ci.org/jchamill/generator-jswp
-[daviddm-image]: https://david-dm.org/jchamill/generator-jswp.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/jchamill/generator-jswp
