@@ -29,7 +29,7 @@ if ( ! function_exists( '<%= themeKey %>_setup' ) ) :
      * hard-coded <title> tag in the document head, and expect WordPress to
      * provide it for us.
      */
-    add_theme_support( 'title-tag' );
+    //add_theme_support( 'title-tag' );
 
     /*
      * Enable support for Post Thumbnails on posts and pages.
@@ -168,6 +168,11 @@ function <%= themeKey %>_scripts() {
   //wp_enqueue_style( '<%= themeKey %>-aos', get_template_directory_uri() . '/js/libs/aos/aos.css' );
   //wp_enqueue_script( '<%= themeKey %>-aos', get_template_directory_uri() . '/js/libs/aos/aos.js', array( 'jquery' ), '2.1.1' );
 
+  // Waypoints
+  //wp_enqueue_script( '<%= themeKey %>-waypoints', get_template_directory_uri() . '/js/libs/waypoints/jquery.waypoints.min.js', array('jquery'), '4.0.1' );
+  //wp_enqueue_script( '<%= themeKey %>-sticky', get_template_directory_uri() . '/js/libs/waypoints/sticky.min.js', array('<%= themeKey %>-waypoints'), '4.0.1' );
+  //wp_enqueue_script( '<%= themeKey %>-inview', get_template_directory_uri() . '/js/libs/waypoints/inview.min.js', array('<%= themeKey %>-waypoints'), '4.0.1' );
+
   // Magnific Popup for modal boxes.
   wp_enqueue_style( '<%= themeKey %>-magnific', get_template_directory_uri() . '/js/libs/magnific-popup/magnific-popup.css' );
   wp_enqueue_script( '<%= themeKey %>-magnific', get_template_directory_uri() . '/js/libs/magnific-popup/jquery.magnific-popup.min.js', array( 'jquery' ), '1.1' );
@@ -305,3 +310,12 @@ function <%= themeKey %>_post_redirect($url, $post) {
   return $url;
 }
 //add_filter('post_type_link', '<%= themeKey %>_post_redirect', 10, 3);
+
+// Customize WP External Links to treat PDFs as external.
+function <%= themeKey %>_before_apply_link( $link ) {
+  $url = trim( $link->get_attr( 'href' ) );
+  if ( stripos($url, '.pdf') !== false ) {
+    $link->set_external();
+  }
+}
+add_action( 'wpel_before_apply_link', '<%= themeKey %>_before_apply_link', 10 );

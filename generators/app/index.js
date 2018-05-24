@@ -102,6 +102,11 @@ module.exports = class extends Generator {
     );
 
     this.fs.copy(
+      this.templatePath('sass/partials/search.sass'),
+      this.destinationPath('sass/partials/search.sass')
+    );
+
+    this.fs.copy(
       this.templatePath('sass/partials/header.sass'),
       this.destinationPath('sass/partials/header.sass')
     );
@@ -124,6 +129,11 @@ module.exports = class extends Generator {
     this.fs.copy(
       this.templatePath('sass/partials/classes.sass'),
       this.destinationPath('sass/partials/classes.sass')
+    );
+
+    this.fs.copy(
+      this.templatePath('sass/print/base.sass'),
+      this.destinationPath('sass/print/base.sass')
     );
 
     this.fs.copy(
@@ -218,6 +228,7 @@ module.exports = class extends Generator {
     this.fs.copyTpl(
       this.templatePath('header.php'),
       this.destinationPath('header.php'), {
+        themeName: this.props.themeName,
         themeKey: this.props.themeKey
       }
     );

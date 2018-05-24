@@ -1,0 +1,46 @@
+@media print
+  *,
+  html,
+  body,
+  #page,
+  #site-header,
+  #content
+    color: #000
+    background-color: #fff
+  body
+    font-size: 13px
+  #menu-primary,
+  #site-navigation,
+  #menu-toggle,
+  #site-footer,
+  .posts-navigation,
+  .navigation,
+  .post-categories,
+  #comments
+    display: none
+  #site-header
+    position: static!important
+    top: auto!important
+    transform: none!important
+    height: auto!important
+  #content a:after
+    content: " ["attr(href)"] "
+  a h1, a h2, a h3, a h4, a h5, a h6, a.btn
+    color: #000
+  #header-overflow
+    color: #000
+    text-align: left
+    text-shadow: none
+    min-height: 0
+    padding: 0
+    h1, h2, h3, h4, h5, h6
+      color: #000
+  #primary
+    padding: 0
+  a.btn
+    padding: 0
+    text-align: left
+  ul.links a
+    color: #000
+    padding: 0
+    border: 0

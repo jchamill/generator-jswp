@@ -5,6 +5,10 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     front_end_modules: {
+      'waypoints': {
+        src: ['lib/jquery.waypoints.min.js', 'lib/shortcuts/inview.min.js', 'lib/shortcuts/sticky.min.js'],
+        dest: 'js/libs/waypoints'
+      },
       'aos': {
         src: 'dist/*',
         dest: 'js/libs/aos'
@@ -28,6 +32,10 @@ module.exports = function(grunt) {
     },
     sass: {
       dist: {
+        options: {
+          'precision': 10,
+          'style': 'compact'
+        },
         files: {
           'css/style.css' : 'sass/style.sass'
         }

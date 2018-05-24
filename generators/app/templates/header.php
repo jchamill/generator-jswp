@@ -16,6 +16,25 @@
   <?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
   <?php endif; ?>
+
+  <?php $page_title = <%= themeKey %>_get_field( 'crb_page_title' ); ?>
+  <?php if ($page_title): ?>
+    <title><?php print $page_title; ?></title>
+    <meta name="title" content="<?php print esc_attr($page_title); ?>">
+  <?php elseif ($page_title = get_the_title()): ?>
+    <title><%= themeName %> | <?php print $page_title; ?></title>
+    <meta name="title" content="<%= themeName %> | <?php print esc_attr($page_title); ?>">
+  <?php else: ?>
+    <title><%= themeName %></title>
+    <meta name="title" content="<%= themeName %>">
+  <?php endif; ?>
+
+  <?php $meta_description = <%= themeKey %>_get_field( 'crb_meta_description' ); ?>
+  <?php if ($meta_description || $meta_description = get_the_excerpt()): ?>
+    <meta name="description" content="<?php print esc_attr($meta_description); ?>">
+    <meta name="og:description" content="<?php print esc_attr($meta_description); ?>">
+  <?php endif; ?>
+
   <?php $og_image = <%= themeKey %>_get_field( 'crb_og_image' ); ?>
   <?php if ($og_image): ?>
     <meta name="og:image" content="<?php print $og_image; ?>">
@@ -105,6 +124,7 @@
             'container' => '',
           ) );
           ?>
+          <?php get_search_form(); ?>
         </nav><!-- .main-navigation -->
       <?php endif; ?>
 
@@ -115,7 +135,17 @@
               <?php print $header_content; ?>
             </div>
           <?php else: ?>
-            <h1 class="title"><?php print is_404() ? '404' : get_the_title(); ?></h1>
+            <h1 class="title">
+              <?php if (is_404()): ?>
+                404
+              <?php elseif (is_search()): ?>
+                Search Results
+              <?php elseif (is_archive()): ?>
+                <?php print get_the_archive_title(); ?>
+              <?php else: ?>
+                <?php print get_the_title(); ?>
+              <?php endif; ?>
+            </h1>
           <?php endif; ?>
         </div>
       </div>

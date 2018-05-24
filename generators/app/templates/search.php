@@ -7,13 +7,24 @@
 
 get_header(); ?>
 
+<?php
+global $wp_query;
+$total_results = $wp_query->found_posts;
+$search_query = get_search_query();
+?>
+
 <section id="primary" class="content-area">
   <main id="main" class="site-main" role="main">
+
+    <?php $mobile_search_class = empty($search_query) ? 'search-empty' : ''; ?>
+    <div id="mobile-search" class="<?php print $mobile_search_class; ?>">
+      <?php get_search_form(); ?>
+    </div>
 
     <?php if ( have_posts() ) : ?>
 
       <header class="page-header">
-        <h1 class="page-title"><?php printf( 'Search Results for: %s', '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
+        <h4><?php printf( $total_results . ' results found for: &ldquo;<span class="search-highlight">%s</span>&rdquo;', esc_html( $search_query ) ); ?></h4>
       </header><!-- .page-header -->
 
       <?php

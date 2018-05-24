@@ -5,21 +5,18 @@
  * @package <%= themeKey %>
  */
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article class="search-result-row" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <header class="entry-header">
-    <?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-  </header><!-- .entry-header -->
+    <?php
+    $post_type_nice = <%= themeKey %>_get_post_type_nicename();
+    $prepend_str = (!empty($post_type_nice)) ? $post_type_nice . ' <span class="separator">&gt</span> ' : '';
+    ?>
+    <?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">%s', esc_url( get_permalink() ), $prepend_str ), '</a></h2>' ); ?>
+  </header>
 
-  <?php <%= themeKey %>_post_thumbnail(); ?>
-
-  <?php <%= themeKey %>_excerpt(); ?>
-
-  <?php if ( 'post' === get_post_type() ) : ?>
-
-    <footer class="entry-footer">
-      <?php <%= themeKey %>_entry_meta(); ?>
-    </footer><!-- .entry-footer -->
-
+  <?php $excerpt = get_the_excerpt(); ?>
+  <?php if (!empty($excerpt)): ?>
+    <div class="search-excerpt"><?php <%= themeKey %>_excerpt(); ?></div>
   <?php endif; ?>
-</article><!-- #post-## -->
 
+</article>

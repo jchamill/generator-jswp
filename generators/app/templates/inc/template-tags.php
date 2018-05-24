@@ -1,5 +1,18 @@
 <?php
 
+if ( ! function_exists( '<%= themeKey %>_get_post_type_nicename' ) ) :
+  function <%= themeKey %>_get_post_type_nicename() {
+    $map = array(
+      'post_type_key' => 'Post Type',
+      'post' => 'Blog',
+    );
+
+    $post_type = get_post_type();
+
+    return isset($map[$post_type]) ? $map[$post_type] : '';
+  }
+endif;
+
 if ( ! function_exists( '<%= themeKey %>_style_attrs' ) ) :
   function <%= themeKey %>_style_attrs($attrs) {
     $style = '';
