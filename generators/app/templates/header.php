@@ -49,20 +49,8 @@
 <div id="page" class="site">
   <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', '<%= themeKey %>' ); ?></a>
 
-  <?php
-  $header_styles = array();
-  $header_classes = array();
-
-  if (has_post_thumbnail()) {
-    $header_styles['background-image'] = 'url(' . get_the_post_thumbnail_url() . ')';
-  }
-  $header_content = <%= themeKey %>_get_field( 'crb_header_content' );
-  if ($header_content) {
-    $header_classes[] = 'expanded-header';
-  }
-  ?>
-  <header id="site-header" class="<?php print implode(' ', $header_classes); ?>" style="<?php print <%= themeKey %>_style_attrs($header_styles); ?>">
-    <div id="header-overflow">
+  <header id="site-header">
+    <div class="container clearfix">
       <div id="logo">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="">
           <svg class="" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -127,29 +115,42 @@
           <?php get_search_form(); ?>
         </nav><!-- .main-navigation -->
       <?php endif; ?>
-
-      <div id="header-content">
-        <div class="container">
-          <?php if ($header_content): ?>
-            <div class="editor">
-              <?php print $header_content; ?>
-            </div>
-          <?php else: ?>
-            <h1 class="title">
-              <?php if (is_404()): ?>
-                404
-              <?php elseif (is_search()): ?>
-                Search Results
-              <?php elseif (is_archive()): ?>
-                <?php print get_the_archive_title(); ?>
-              <?php else: ?>
-                <?php print get_the_title(); ?>
-              <?php endif; ?>
-            </h1>
-          <?php endif; ?>
-        </div>
-      </div>
     </div>
   </header><!-- .site-header -->
+
+  <?php
+    $header_styles = array();
+    $header_classes = array();
+
+    if (has_post_thumbnail()) {
+      $header_styles['background-image'] = 'url(' . get_the_post_thumbnail_url() . ')';
+    }
+    $header_content = <%= themeKey %>_get_field( 'crb_header_content' );
+    if ($header_content) {
+      $header_classes[] = 'expanded-header';
+    }
+  ?>
+
+  <div id="page-title" class="<?php print implode(' ', $header_classes); ?>" style="<?php print <%= themeKey %>_style_attrs($header_styles); ?>">
+    <div class="container">
+      <?php if ($header_content): ?>
+        <div class="editor">
+          <?php print do_shortcode(wpautop($header_content)); ?>
+        </div>
+      <?php else: ?>
+        <h1 class="title">
+          <?php if (is_404()): ?>
+            404
+          <?php elseif (is_search()): ?>
+            Search Results
+          <?php elseif (is_archive()): ?>
+            <?php print get_the_archive_title(); ?>
+          <?php else: ?>
+            <?php print get_the_title(); ?>
+          <?php endif; ?>
+        </h1>
+      <?php endif; ?>
+    </div>
+  </div>
 
   <div id="content" class="site-content">

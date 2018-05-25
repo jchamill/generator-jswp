@@ -220,6 +220,9 @@ add_action( 'wp_enqueue_scripts', '<%= themeKey %>_scripts' );
  * @return array (Maybe) filtered body classes.
  */
 function <%= themeKey %>_body_classes( $classes ) {
+  // If you want a fixed header.
+  $classes[] = 'fixed-header';
+
   // Adds a class of custom-background-image to sites with a custom background image.
   if ( get_background_image() ) {
     $classes[] = 'custom-background-image';
