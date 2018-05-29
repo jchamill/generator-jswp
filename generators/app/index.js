@@ -97,8 +97,8 @@ module.exports = class extends Generator {
     );
 
     this.fs.copy(
-      this.templatePath('sass/partials/panels.sass'),
-      this.destinationPath('sass/partials/panels.sass')
+      this.templatePath('sass/partials/siteorigin.sass'),
+      this.destinationPath('sass/partials/siteorigin.sass')
     );
 
     this.fs.copy(
