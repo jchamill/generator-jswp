@@ -109,12 +109,22 @@ add_action( 'after_setup_theme', '<%= themeKey %>_content_width', 0 );
 function <%= themeKey %>_widgets_init() {
   register_sidebar( array(
     'name'          => __( 'Bottom', '<%= themeKey %>' ),
-    'id'            => 'sidebar-1',
+    'id'            => 'bottom',
     'description'   => __( 'Add widgets here to appear below content.', '<%= themeKey %>' ),
     'before_widget' => '<section id="%1$s" class="widget %2$s">',
     'after_widget'  => '</section>',
     'before_title'  => '<h2 class="widget-title">',
     'after_title'   => '</h2>',
+  ) );
+
+  register_sidebar( array(
+    'name'          => __( 'Single Post', '<%= themeKey %>' ),
+    'id'            => 'single',
+    'description'   => __( 'Add widgets here to appear below content on single posts.', '<%= themeKey %>' ),
+    'before_widget' => '<section id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h3 class="widget-title">',
+    'after_title'   => '</h3>',
   ) );
 }
 //add_action( 'widgets_init', '<%= themeKey %>_widgets_init' );
@@ -220,9 +230,6 @@ add_action( 'wp_enqueue_scripts', '<%= themeKey %>_scripts' );
  * @return array (Maybe) filtered body classes.
  */
 function <%= themeKey %>_body_classes( $classes ) {
-  // If you want a fixed header.
-  $classes[] = 'fixed-header';
-
   // Adds a class of custom-background-image to sites with a custom background image.
   if ( get_background_image() ) {
     $classes[] = 'custom-background-image';
@@ -241,6 +248,11 @@ function <%= themeKey %>_body_classes( $classes ) {
   return $classes;
 }
 add_filter( 'body_class', '<%= themeKey %>_body_classes' );
+
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/customizer.php';
 
 /**
  * Custom template tags for this theme.

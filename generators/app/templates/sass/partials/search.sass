@@ -1,3 +1,99 @@
+#site-navigation
+  #menu-primary
+    .search-toggle a
+      position: relative
+      height: 0
+      overflow: hidden
+      width: 24px
+      padding-top: 31px
+      margin-top: 8px
+      display: block
+      &:before
+        display: none
+      &:after
+        content: ""
+        display: block
+        position: absolute
+        top: 7px
+        right: 0
+        height: 24px
+        width: 24px
+        background: #999 no-repeat
+
+#search-drawer
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  background-color: #fff
+  height: 330px
+  padding: 0 15px
+  transform: translateY(-345px)
+  transition: transform 250ms ease
+  display: flex
+  align-items: center
+  justify-content: center
+  box-shadow: 0 10px 15px rgba(0,0,0,0.4)
+  .search-open &
+    @include grid-media($desktop)
+      transform: translateY(0px)
+  #search-close
+    @include grid-media($desktop)
+      display: block
+      position: absolute
+      top: 20px
+      right: 20px
+      width: 22px
+      height: 22px
+      background: #999 no-repeat
+      cursor: pointer
+  .search-form
+    @include grid-media($desktop)
+      flex-basis: auto
+      flex-grow: 1
+      max-width: 500px
+      position: relative
+  label,
+  input[type="search"]
+    font-family: $header-font-family
+    font-size: 2.722em
+    padding: 0
+  input[type="search"]
+    padding-right: 65px
+  .search-submit
+    position: absolute
+    top: 21px
+    right: 5px
+    cursor: pointer
+    display: block
+    background: #000 center center no-repeat
+    background-size: 33px 33px
+    height: 33px
+    width: 54px
+    border: 0
+
+#mobile-search
+  text-align: left
+  position: relative
+  input[type="search"]
+    border-bottom: 1px solid rgba(255,255,255,0.34)
+    color: $link-color
+    font-family: $header-font-family
+    font-size: 1.600em
+    padding: 10px 30px 10px 0
+    margin: 0
+  .search-submit
+    position: absolute
+    top: 11px
+    right: 0
+    cursor: pointer
+    display: block
+    background: #999 center center no-repeat
+    background-size: 20px 20px
+    height: 20px
+    width: 20px
+    border: 0
+
 body.search
   #primary
     max-width: $contain-medium
@@ -29,7 +125,6 @@ body.search
     margin-bottom: 1.111em
     padding-bottom: 1.111em
 
-#mobile-search
-  margin-bottom: 1.5em
-  @include grid-media($tablet)
+#mobile-search-form
+  @include grid-media($desktop)
     display: none

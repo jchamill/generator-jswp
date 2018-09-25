@@ -6,10 +6,10 @@
  */
 ?>
 
-<?php if ( is_active_sidebar( 'sidebar-1' )  ) : ?>
+<?php if ( is_active_sidebar( 'bottom' )  ) : ?>
   <div id="bottom" class="widget-area">
     <div class="container">
-      <?php dynamic_sidebar( 'sidebar-1' ); ?>
+      <?php dynamic_sidebar( 'bottom' ); ?>
     </div>
   </div><!-- #bottom -->
 <?php endif; ?>

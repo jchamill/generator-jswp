@@ -7,9 +7,16 @@
   background-position: center center
   background-size: cover
 
-.so-fullwidth
-  .container
+.so-width-full
+  > .container
     max-width: none
+    padding: 0
+.so-width-medium
+  .container
+    @include contain($contain-medium)
+.so-width-small
+  .container
+    @include contain($contain-small)
 
 .so-bg-dark-gray
   background-color: $dark-gray

@@ -1,23 +1,28 @@
 #site-header
-  background-color: $blue
-  padding: 10px 0
+  padding: 25px 0
   height: 65px
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  z-index: 75
   @include grid-media($tablet)
-    height: 100px
+    height: 110px
+    padding: 40px 0 15px
 
 .fixed-header
   #site-header
+    padding: 12px 0
+    top: -65px
     position: fixed
-    top: 0
-    left: 0
-    width: 100%
-    box-shadow: 0 15px 30px rgba(#000, 0.05)
-    z-index: 75
+    transform: translateY(0px)
     transition: transform 250ms ease
-  #page
-    padding-top: 65px
+    background: #fff
+    box-shadow: 0 9px 28px 0 rgba(0,0,0,0.16)
+    @include grid-media($tablet)
+      padding-top: 21px
     @include grid-media($desktop)
-      padding-top: 100px
+      top: -138px
 
 .admin-bar.fixed-header
   #site-header
@@ -25,9 +30,9 @@
 
 .slide-header.fixed-header
   #site-header
-    transform: translateY(-65px)
+    transform: translateY(65px)
     @include grid-media($desktop)
-      transform: translateY(-100px)
+      transform: translateY(138px)
 
 #logo
   text-align: left
@@ -48,21 +53,9 @@
   background-position: 40% 50%
   color: #fff
   text-align: center
-  position: relative
+  padding: 150px 0 80px
   @include grid-media($tablet)
     background-position: center center
-    min-height: 300px
-  .container
-    padding-top: 2em
-    padding-bottom: 2em
-    @include grid-media($tablet)
-      padding-top: 0
-      padding-bottom: 0
-      position: absolute
-      top: 50%
-      transform: perspective(1px) translateY(-50%)
-      left: 0
-      right: 0
   h1, h2, h3, h4, h5, h6
     text-transform: none
     color: #fff

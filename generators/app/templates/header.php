@@ -30,7 +30,7 @@
   <?php endif; ?>
 
   <?php $meta_description = <%= themeKey %>_get_field( 'crb_meta_description' ); ?>
-  <?php if ($meta_description || $meta_description = get_the_excerpt()): ?>
+  <?php if ($meta_description || (has_excerpt() && $meta_description = get_the_excerpt())): ?>
     <meta name="description" content="<?php print esc_attr($meta_description); ?>">
     <meta name="og:description" content="<?php print esc_attr($meta_description); ?>">
   <?php endif; ?>
@@ -97,7 +97,6 @@
             <span></span>
             <span></span>
             <span></span>
-            <span></span>
           </div>
         </div>
 
@@ -112,7 +111,10 @@
             'container' => '',
           ) );
           ?>
-          <?php get_search_form(); ?>
+          <div id="search-drawer">
+            <span id="search-close"></span>
+            <?php get_search_form(); ?>
+          </div>
         </nav><!-- .main-navigation -->
       <?php endif; ?>
     </div>

@@ -169,6 +169,14 @@ module.exports = class extends Generator {
     );
 
     this.fs.copyTpl(
+      this.templatePath('inc/customizer.php'),
+      this.destinationPath('inc/customizer.php'), {
+        themeName: this.props.themeName,
+        themeKey: this.props.themeKey
+      }
+    );
+
+    this.fs.copyTpl(
       this.templatePath('inc/template-tags.php'),
       this.destinationPath('inc/template-tags.php'), {
         themeName: this.props.themeName,
@@ -291,8 +299,8 @@ module.exports = class extends Generator {
     );
 
     this.fs.copyTpl(
-      this.templatePath('template-parts/content-single.php'),
-      this.destinationPath('template-parts/content-single.php'), {
+      this.templatePath('template-parts/content-single-post.php'),
+      this.destinationPath('template-parts/content-single-post.php'), {
         themeKey: this.props.themeKey
       }
     );

@@ -17,7 +17,7 @@ $search_query = get_search_query();
   <main id="main" class="site-main" role="main">
 
     <?php $mobile_search_class = empty($search_query) ? 'search-empty' : ''; ?>
-    <div id="mobile-search" class="<?php print $mobile_search_class; ?>">
+    <div id="mobile-search-form" class="<?php print $mobile_search_class; ?>">
       <?php get_search_form(); ?>
     </div>
 

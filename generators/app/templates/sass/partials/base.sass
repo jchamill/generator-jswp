@@ -91,7 +91,6 @@ blockquote
 
 // Responsive images.
 img
-  display: block
   max-width: 100%
   height: auto
   border: 0
@@ -106,10 +105,19 @@ img
 
 // Page layout.
 
+#page
+  overflow-x: hidden // Fix horizontal scroll bar caused by page builder.
+
 #content
   background-color: #fff
-  overflow-x: hidden // Fix horizontal scroll bar caused by page builder.
 
 #primary
   @include contain($contain-large)
   padding: 0 15px
+
+#breakpoint
+  display: none
+  @include grid-media($tablet)
+    display: table
+  @include grid-media($desktop)
+    display: block
