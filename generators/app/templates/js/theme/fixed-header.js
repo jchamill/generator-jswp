@@ -1,47 +1,9 @@
-/**
- * Theme functions file.
- */
-
 (function($) {
-
   'use strict';
 
   var last_scroll_top = 0;
 
   $(document).ready(function() {
-    $('html').removeClass('no-js').addClass('js');
-
-    $('#menu-toggle').on('click', function() {
-      $('body').addClass('open');
-    });
-
-    $('#mobile-close').on('click', function() {
-      $('body').removeClass('open');
-    });
-
-    //AOS.init();
-
-    $('.modal-inline').magnificPopup({
-      type: 'inline',
-      midClick: true,
-      removalDelay: 300,
-      mainClass: 'mfp-zoom-in'
-    });
-
-    $('.modal-iframe').magnificPopup({
-      type: 'iframe'
-    });
-
-    $('#menu-primary .search-toggle').on('click', function (e) {
-      e.preventDefault();
-      $('body').toggleClass('search-open');
-      $('.search-field:first').focus();
-    });
-
-    $('#search-close').on('click', function() {
-      $('body').removeClass('search-open');
-    });
-
     $(window).scroll(function() {
       debounce(function() {
         var header_height = 110;

@@ -170,56 +170,24 @@ remove_action( 'admin_print_styles', 'print_emoji_styles' );
 function <%= themeKey %>_scripts() {
   // Add custom fonts, used in the main stylesheet.
   wp_enqueue_style( '<%= themeKey %>-fonts', <%= themeKey %>_fonts_url(), array(), null );
+  //wp_enqueue_style( '<%= themeKey %>-typekit', 'https://use.typekit.net/your-key-here.css', array(), null );
 
-  // Add Font Icons, used in the main stylesheet.
-  // wp_enqueue_style( 'fonticons', get_template_directory_uri() . '/fonticons/fonticons.css', array(), '3.4.1' );
-
-  // AOS for animations on scroll.
-  //wp_enqueue_style( '<%= themeKey %>-aos', get_template_directory_uri() . '/js/libs/aos/aos.css' );
-  //wp_enqueue_script( '<%= themeKey %>-aos', get_template_directory_uri() . '/js/libs/aos/aos.js', array( 'jquery' ), '2.1.1' );
-
-  // Waypoints
-  //wp_enqueue_script( '<%= themeKey %>-waypoints', get_template_directory_uri() . '/js/libs/waypoints/jquery.waypoints.min.js', array('jquery'), '4.0.1' );
-  //wp_enqueue_script( '<%= themeKey %>-sticky', get_template_directory_uri() . '/js/libs/waypoints/sticky.min.js', array('<%= themeKey %>-waypoints'), '4.0.1' );
-  //wp_enqueue_script( '<%= themeKey %>-inview', get_template_directory_uri() . '/js/libs/waypoints/inview.min.js', array('<%= themeKey %>-waypoints'), '4.0.1' );
-
-  // Magnific Popup for modal boxes.
-  wp_enqueue_style( '<%= themeKey %>-magnific', get_template_directory_uri() . '/js/libs/magnific-popup/magnific-popup.css' );
-  wp_enqueue_script( '<%= themeKey %>-magnific', get_template_directory_uri() . '/js/libs/magnific-popup/jquery.magnific-popup.min.js', array( 'jquery' ), '1.1' );
-
-  // Slick Slider for slideshows and carousels.
-  //wp_enqueue_style( '<%= themeKey %>-slick', get_template_directory_uri() . '/js/libs/slick-carousel/slick.css' );
-  //wp_enqueue_script( '<%= themeKey %>-slick', get_template_directory_uri() . '/js/libs/slick-carousel/slick.min.js', array( 'jquery' ), '1.7' );
-
-  // Fitvids for responsive videos.
-  //wp_enqueue_script( '<%= themeKey %>-fitvids', get_template_directory_uri() . '/js/libs/fitvids/fitvids.min.js', array( 'jquery' ), '1.2' );
-
-  // Lazy loading for images.
-  //wp_enqueue_script( '<%= themeKey %>-lazy', get_template_directory_uri() . '/js/libs/jquery-lazy/jquery.lazy.min.js', array( 'jquery' ), '1.7.4' );
+  // Vendor stylesheet.
+  wp_enqueue_style( '<%= themeKey %>-vendor', get_template_directory_uri() . '/css/vendor.min.css' );
 
   // Theme stylesheet.
-  wp_enqueue_style( '<%= themeKey %>-style', get_template_directory_uri() . '/css/style.css' );
+  wp_enqueue_style( '<%= themeKey %>-style', get_template_directory_uri() . '/css/style.min.css' );
 
   // Load the html5 shiv.
   wp_enqueue_script( '<%= themeKey %>-html5', get_template_directory_uri() . '/js/html5.js', array(), '3.7.3' );
   wp_script_add_data( '<%= themeKey %>-html5', 'conditional', 'lt IE 9' );
 
-  wp_enqueue_script( '<%= themeKey %>-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151112', true );
-
   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
     wp_enqueue_script( 'comment-reply' );
   }
 
-  if ( is_singular() && wp_attachment_is_image() ) {
-    wp_enqueue_script( '<%= themeKey %>-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20151104' );
-  }
-
-  wp_enqueue_script( '<%= themeKey %>-script', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ), '20151204', true );
-
-  wp_localize_script( '<%= themeKey %>-script', 'screenReaderText', array(
-    'expand'   => __( 'expand child menu', '<%= themeKey %>' ),
-    'collapse' => __( 'collapse child menu', '<%= themeKey %>' ),
-  ) );
+  wp_enqueue_script( '<%= themeKey %>-vendor', get_template_directory_uri() . '/vendor.min.js', array( 'jquery' ), '1.0', true );
+  wp_enqueue_script( '<%= themeKey %>-script', get_template_directory_uri() . '/scripts.min.js', array( 'jquery' ), '1.0', true );
 }
 add_action( 'wp_enqueue_scripts', '<%= themeKey %>_scripts' );
 
@@ -231,9 +199,9 @@ add_action( 'wp_enqueue_scripts', '<%= themeKey %>_scripts' );
  */
 function <%= themeKey %>_body_classes( $classes ) {
   // Adds a class of custom-background-image to sites with a custom background image.
-  if ( get_background_image() ) {
-    $classes[] = 'custom-background-image';
-  }
+  //if ( get_background_image() ) {
+  //  $classes[] = 'custom-background-image';
+  //}
 
   // Adds a class of no-sidebar to sites without active sidebar.
   //if ( ! is_active_sidebar( 'sidebar-1' ) ) {
@@ -241,9 +209,9 @@ function <%= themeKey %>_body_classes( $classes ) {
   //}
 
   // Adds a class of hfeed to non-singular pages.
-  if ( ! is_singular() ) {
-    $classes[] = 'hfeed';
-  }
+  //if ( ! is_singular() ) {
+  //  $classes[] = 'hfeed';
+  //}
 
   return $classes;
 }

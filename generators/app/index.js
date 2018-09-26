@@ -142,13 +142,23 @@ module.exports = class extends Generator {
     );
 
     this.fs.copy(
-      this.templatePath('js/skip-link-focus-fix.js'),
-      this.destinationPath('js/skip-link-focus-fix.js')
+      this.templatePath('js/theme/skip-link-focus-fix.js'),
+      this.destinationPath('js/theme/skip-link-focus-fix.js')
     );
 
     this.fs.copy(
-      this.templatePath('js/scripts.js'),
-      this.destinationPath('js/scripts.js')
+      this.templatePath('js/theme/fixed-header.js'),
+      this.destinationPath('js/theme/fixed-header.js')
+    );
+
+    this.fs.copy(
+      this.templatePath('js/theme/menu-search.js'),
+      this.destinationPath('js/theme/menu-search.js')
+    );
+
+    this.fs.copy(
+      this.templatePath('js/theme/initialize.js'),
+      this.destinationPath('js/theme/initialize.js')
     );
 
     this.fs.copyTpl(
