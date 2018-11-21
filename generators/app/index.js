@@ -132,6 +132,11 @@ module.exports = class extends Generator {
     );
 
     this.fs.copy(
+      this.templatePath('sass/widgets/posts.sass'),
+      this.destinationPath('sass/widgets/posts.sass')
+    );
+
+    this.fs.copy(
       this.templatePath('sass/print/base.sass'),
       this.destinationPath('sass/print/base.sass')
     );

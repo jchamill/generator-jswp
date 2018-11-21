@@ -1,0 +1,45 @@
+.so-widget-js-core-posts
+  .post-date
+    text-transform: uppercase
+    font-size: 12px
+    letter-spacing: 1px
+    margin-bottom: 3px
+    font-weight: bold
+  ul
+    margin: 0 0 1.5em
+  li
+    list-style: none
+  .post-block
+    a
+      text-decoration: none
+      display: block
+      height: 100%
+  .posts-style-list
+    li
+      border-bottom: 1px solid #eee
+      padding: 15px 0
+      &:first-child
+        padding-top: 0
+      &:last-child
+        border-bottom: 0
+        padding-bottom: 0
+  .posts-style-blocks
+    @include grid-media($tablet)
+      margin: 0 -15px
+      display: flex
+      flex-wrap: wrap
+    li
+      margin-bottom: 30px
+      @include grid-media($tablet)
+        flex: 0 0 49.99999%
+        max-width: 49.99999%
+        padding: 0 15px
+        min-height: 1px
+      @include grid-media($desktop)
+        flex: 0 0 33.33333%
+        max-width: 33.33333%
+    .post-block
+      height: 100%
+      background-color: #eee
+    .post-content
+      padding: 15px 15px 20px
