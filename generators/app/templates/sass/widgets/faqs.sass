@@ -1,0 +1,85 @@
+.js .so-widget-js-core-faqs
+  .faq-question
+    position: relative
+    z-index: 25
+    cursor: pointer
+    &:after,
+    &:before
+      display: block
+      content: ""
+      position: absolute
+      top: 50%
+      right: 30px
+      height: 17px
+      width: 3px
+      margin-top: -8px
+      background-color: $dark-blue
+      border-radius: 1px
+    &:before
+      transform: rotate(90deg)
+  .faq-answer
+    overflow: hidden
+    height: 0
+    position: relative
+    z-index: 20
+    opacity: 0
+    transform: translateY(-22px)
+    transition: all 250ms ease
+  li
+    &:last-child
+      .faq-question
+        border: 0
+  .faq-open
+    &:last-child
+      .faq-question
+        border-bottom: 2px solid $light-gray
+      .faq-answer
+        border-bottom: 0
+    .faq-question
+      &:before
+        transform: rotate(-45deg)
+        background-color: $gray
+      &:after
+        transform: rotate(45deg)
+        background-color: $gray
+    .faq-answer
+      height: auto
+      opacity: 1
+      padding-top: 1em
+      padding-bottom: 1em
+      transform: translateY(0px)
+
+.so-widget-js-core-faqs
+  .faq-group
+    margin-bottom: 2em
+    border-bottom: 2px solid $light-gray
+    @include grid-media($tablet)
+      margin-bottom: 0
+      @include clearfix
+    h3.faq-category
+      @include grid-media($tablet)
+        float: left
+        width: 32.3333%
+    .faq-content
+      @include grid-media($tablet)
+        float: right
+        width: 65.6666%
+  h3.faq-category
+    font-size: 2.000em
+    color: $gray
+    margin: 0
+    padding-top: 11px
+  .faq-content
+    list-style: none
+    margin: 0
+  .faq-question
+    padding: 22px 90px 22px 0
+    border-bottom: 2px solid $light-gray
+    margin: 0
+    font-size: 1.333em
+  .faq-answer
+    border-bottom: 2px solid $light-gray
+  li
+    &:last-child
+      .faq-answer
+        border-bottom: 0
