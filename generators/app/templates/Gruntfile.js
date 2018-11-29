@@ -105,9 +105,9 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', [
     'front_end_modules',
-    'watch',
     'concat',
-    'uglify'
+    'uglify',
+    'watch'
   ]);
 
 };
