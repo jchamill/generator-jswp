@@ -1,0 +1,23 @@
+.so-widget-js-core-hero
+  .hero-item
+    background: center center no-repeat #000000
+    background-size: cover
+    padding: 2em 0 4em
+    display: flex
+    align-items: center
+    justify-content: center
+    text-align: center
+    min-height: 400px
+    @include grid-media($tablet)
+      min-height: 450px
+    @include grid-media($desktop)
+      min-height: 550px
+  .container
+    max-width: $contain-medium
+  .hero-cta
+    margin-top: 2em
+  .slick-dots
+    position: absolute
+    bottom: 25px
+    left: 0
+    width: 100%

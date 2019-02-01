@@ -103,31 +103,28 @@ ul.slick-dots
   text-align: center
   margin: 0
   li
-    position: relative
     display: inline-block
-    width: 8px
-    height: 8px
-    margin: 0 10px
+    margin: 0 7px
     padding: 0
     cursor: pointer
     button
-      border-radius: 100px
+      border-radius: 50%
       font-size: 0
       line-height: 0
       display: block
-      width: 8px
-      height: 8px
-      padding: 2px
+      width: 18px
+      height: 18px
       cursor: pointer
       color: transparent
-      background-color: #fff
-      opacity: .2
-      border: 0
+      background-color: transparent
+      opacity: .5
+      border: 2px solid #fff
       outline: none
+      transition: opacity 250ms ease-in-out, background-color 250ms ease-in-out
     &.slick-active
       button
         background-color: #fff
-        opacity: 1
+        opacity: 0.75
 
 .menu
   list-style: none
