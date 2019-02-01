@@ -1,0 +1,35 @@
+.grid-container
+  @include grid-media($tablet)
+    display: flex
+    flex-direction: row
+    margin-left: -15px
+    margin-right: -15px
+
+.grid-item-1,
+.grid-item-2,
+.grid-item-3,
+.grid-item-4,
+.grid-item-5,
+.grid-item-6
+  @include grid-media($tablet)
+    padding-left: 15px
+    padding-right: 15px
+
+.grid-item-1
+  @include grid-media($tablet)
+    flex: 1
+.grid-item-2
+  @include grid-media($tablet)
+    flex: 2
+.grid-item-3
+  @include grid-media($tablet)
+    flex: 3
+.grid-item-4
+  @include grid-media($tablet)
+    flex: 4
+.grid-item-5
+  @include grid-media($tablet)
+    flex: 5
+.grid-item-6
+  @include grid-media($tablet)
+    flex: 6

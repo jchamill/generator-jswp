@@ -82,6 +82,11 @@ module.exports = class extends Generator {
     );
 
     this.fs.copy(
+      this.templatePath('sass/partials/grid.sass'),
+      this.destinationPath('sass/partials/grid.sass')
+    );
+
+    this.fs.copy(
       this.templatePath('sass/partials/buttons.sass'),
       this.destinationPath('sass/partials/buttons.sass')
     );
@@ -159,6 +164,11 @@ module.exports = class extends Generator {
     this.fs.copy(
       this.templatePath('sass/widgets/stats.sass'),
       this.destinationPath('sass/widgets/stats.sass')
+    );
+
+    this.fs.copy(
+      this.templatePath('sass/widgets/callout.sass'),
+      this.destinationPath('sass/widgets/callout.sass')
     );
 
     this.fs.copy(
