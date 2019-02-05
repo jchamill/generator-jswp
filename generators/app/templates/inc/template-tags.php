@@ -24,8 +24,11 @@ if ( ! function_exists( '<%= themeKey %>_style_attrs' ) ) :
 endif;
 
 if ( ! function_exists( '<%= themeKey %>_get_field' ) ) :
-  function <%= themeKey %>_get_field($name) {
+  function <%= themeKey %>_get_field($name, $type = false) {
     if (function_exists('carbon_get_post_meta')) {
+      if ($type) {
+        return carbon_get_post_meta( get_the_ID(), $name, $type );
+      }
       return carbon_get_post_meta( get_the_ID(), $name );
     }
     return false;

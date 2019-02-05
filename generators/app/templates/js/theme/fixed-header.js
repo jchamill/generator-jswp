@@ -7,10 +7,10 @@
     $(window).scroll(function() {
       debounce(function() {
         var header_height = 110;
-        var unfix_threshold = 25;
+        var unfix_threshold = 1;
         if ($('#breakpoint').css('display') == 'none') {
           header_height = 65;
-          unfix_threshold = 3;
+          unfix_threshold = 1;
         }
         var scroll_top = $(window).scrollTop();
         var $body = $('body');

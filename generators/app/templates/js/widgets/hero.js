@@ -3,7 +3,7 @@
 
   $(document).ready(function() {
 
-    $('.so-widget-js-core-hero').slick({
+    $('.hero-slider').slick({
       adaptiveHeight: true,
       autoplay: true,
       autoplaySpeed: 7000,

@@ -45,7 +45,22 @@
   <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<?php
+$slides = <%= themeKey %>_get_field( 'crb_slides', 'complex' );
+$header_size = <%= themeKey %>_get_field( 'crb_header_size' );
+$header_size = ( $header_size ) ? 'hero-' . esc_attr( $header_size ) : 'hero-small';
+$body_class = ( $slides ) ? 'with-header' : 'without-header';
+
+//if ( is_404() ) {
+//  $slides[] = array( 'crb_slide_title' => 'Page Not Found' );
+//} elseif ( is_search() ) {
+//  $slides[] = array( 'crb_slide_title' => 'Search Results' );
+//} elseif ( is_archive() ) {
+//  $slides[] = array( 'crb_slide_title' => get_the_archive_title() );
+//}
+?>
+
+<body <?php body_class( $body_class ); ?>>
 <div id="page" class="site">
   <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', '<%= themeKey %>' ); ?></a>
 
@@ -120,39 +135,42 @@
     </div>
   </header><!-- .site-header -->
 
-  <?php
-    $header_styles = array();
-    $header_classes = array();
-
-    if (has_post_thumbnail()) {
-      $header_styles['background-image'] = 'url(' . get_the_post_thumbnail_url() . ')';
+  <?php if ( $slides ): ?>
+    <?php
+    $classes = array( 'so-widget-js-core-hero' );
+    if ( sizeof( $slides ) > 1 ) {
+      $classes[] = 'hero-slider';
     }
-    $header_content = <%= themeKey %>_get_field( 'crb_header_content' );
-    if ($header_content) {
-      $header_classes[] = 'expanded-header';
-    }
-  ?>
+    ?>
+    <div id="page-title" class="<?php print implode( ' ', $classes ); ?>">
+      <?php foreach( $slides as $i => $slide ): ?>
+        <?php
+        $styles = array();
+        if ( ! empty( $slide['crb_slide_image'] ) ) {
+          $styles['background-image'] = 'url(' . array_shift( wp_get_attachment_image_src( $slide['crb_slide_image'], 'full' ) ) . ')';
+        }
+        ?>
+        <div class="hero-item so-light-text <?php print $header_size; ?>" style="<?php print <%= themeKey %>_style_attrs( $styles ); ?>">
+          <div class="container">
+            <?php if ( ! empty( $slide['crb_slide_title'] ) ): ?>
+              <h1><?php print $slide['crb_slide_title']; ?></h1>
+            <?php endif; ?>
 
-  <div id="page-title" class="<?php print implode(' ', $header_classes); ?>" style="<?php print <%= themeKey %>_style_attrs($header_styles); ?>">
-    <div class="container">
-      <?php if ($header_content): ?>
-        <div class="editor">
-          <?php print do_shortcode(wpautop($header_content)); ?>
+            <?php if ( ! empty( $slide['crb_slide_cta_url'] ) ): ?>
+              <div class="entry-content">
+                <?php print $slide['crb_slide_content']; ?>
+              </div>
+            <?php endif; ?>
+
+            <?php if ( ! empty( $slide['crb_slide_cta_url'] ) ): ?>
+              <div class="hero-cta">
+                <a href="<?php print esc_url( $slide['crb_slide_cta_url'] ); ?>" class="btn"><?php print $slide['crb_slide_cta_title']; ?></a>
+              </div>
+            <?php endif; ?>
+          </div>
         </div>
-      <?php else: ?>
-        <h1 class="title">
-          <?php if (is_404()): ?>
-            404
-          <?php elseif (is_search()): ?>
-            Search Results
-          <?php elseif (is_archive()): ?>
-            <?php print get_the_archive_title(); ?>
-          <?php else: ?>
-            <?php print get_the_title(); ?>
-          <?php endif; ?>
-        </h1>
-      <?php endif; ?>
+      <?php endforeach; ?>
     </div>
-  </div>
+  <?php endif; ?>
 
   <div id="content" class="site-content">
