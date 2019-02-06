@@ -9,6 +9,8 @@
 ?>
 </div><!-- .site-content -->
 
+<?php get_sidebar(); ?>
+
 <footer id="site-footer" role="contentinfo">
   <div class="container top-bottom-padding">
     <?php if ( has_nav_menu( 'footer' ) ) : ?>

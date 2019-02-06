@@ -116,18 +116,8 @@ function <%= themeKey %>_widgets_init() {
     'before_title'  => '<h2 class="widget-title">',
     'after_title'   => '</h2>',
   ) );
-
-  register_sidebar( array(
-    'name'          => __( 'Single Post', '<%= themeKey %>' ),
-    'id'            => 'single',
-    'description'   => __( 'Add widgets here to appear below content on single posts.', '<%= themeKey %>' ),
-    'before_widget' => '<section id="%1$s" class="widget %2$s">',
-    'after_widget'  => '</section>',
-    'before_title'  => '<h3 class="widget-title">',
-    'after_title'   => '</h3>',
-  ) );
 }
-//add_action( 'widgets_init', '<%= themeKey %>_widgets_init' );
+add_action( 'widgets_init', '<%= themeKey %>_widgets_init' );
 
 if ( ! function_exists( '<%= themeKey %>_fonts_url' ) ) :
   /**
