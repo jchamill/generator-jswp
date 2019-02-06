@@ -57,13 +57,13 @@
         font-family: $header-font-family
         text-decoration: none
         font-weight: bold
-        color: $link-color
+        color: $white
         position: relative
         overflow: hidden
         &:hover
-          color: $link-hover-color
+          color: $light-gray
       li.current-menu-item a
-        color: $link-hover-color
+        color: $light-gray
 
 #menu-toggle
   position: absolute
@@ -88,7 +88,7 @@
     width: 100%
     border-radius: 4px
     display: block
-    background-color: $link-color
+    background-color: $white
   span:nth-child(2)
     top: 7px
     width: 14px
@@ -115,12 +115,12 @@ ul.slick-dots
       color: transparent
       background-color: transparent
       opacity: .5
-      border: 2px solid #fff
+      border: 2px solid $white
       outline: none
       transition: opacity 250ms ease-in-out, background-color 250ms ease-in-out
     &.slick-active
       button
-        background-color: #fff
+        background-color: $white
         opacity: 0.75
 
 .menu
@@ -143,7 +143,7 @@ ul.slick-dots
     margin: 2em 2px
   span.current
     background-color: rgba(91,102,112,0.17)
-    color: #000
+    color: $black
   a.prev,
   a.next
     width: auto
@@ -160,7 +160,7 @@ ul.slick-dots
     text-decoration: none
     margin: 2em 2px
     font-size: 1.111em
-    font-weight: 600
+    font-weight: bold
   span.current
     background-color: rgba(91,102,112,0.17)
   a.prev,

@@ -7,7 +7,7 @@
 ?>
 
 <?php if ( is_active_sidebar( 'bottom' )  ) : ?>
-  <div id="bottom" class="widget-area">
+  <div id="bottom" class="so-light-text widget-area">
     <div class="container">
       <?php dynamic_sidebar( 'bottom' ); ?>
     </div>

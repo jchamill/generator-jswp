@@ -17,14 +17,14 @@
         right: 0
         height: 24px
         width: 24px
-        background: #999 no-repeat
+        background: $gray no-repeat
 
 #search-drawer
   position: absolute
   top: 0
   left: 0
   width: 100%
-  background-color: #fff
+  background-color: $white
   height: 330px
   padding: 0 15px
   transform: translateY(-345px)
@@ -44,13 +44,13 @@
       right: 20px
       width: 22px
       height: 22px
-      background: #999 no-repeat
+      background: $gray no-repeat
       cursor: pointer
   .search-form
     @include grid-media($desktop)
       flex-basis: auto
       flex-grow: 1
-      max-width: 500px
+      max-width: $contain-small
       position: relative
   label,
   input[type="search"]
@@ -65,7 +65,7 @@
     right: 5px
     cursor: pointer
     display: block
-    background: #000 center center no-repeat
+    background: $black center center no-repeat
     background-size: 33px 33px
     height: 33px
     width: 54px
@@ -75,7 +75,7 @@
   text-align: left
   position: relative
   input[type="search"]
-    border-bottom: 1px solid rgba(255,255,255,0.34)
+    border-bottom: 1px solid $gray
     color: $link-color
     font-family: $header-font-family
     font-size: 1.600em
@@ -87,7 +87,7 @@
     right: 0
     cursor: pointer
     display: block
-    background: #999 center center no-repeat
+    background: $gray center center no-repeat
     background-size: 20px 20px
     height: 20px
     width: 20px
@@ -104,23 +104,19 @@ body.search
     h1
       font-size: 2.667em
   .search-highlight
-    color: $blue
+    color: $link-color
   .entry-summary
     font-size: 0.889em
     color: #727678
   .entry-title
     font-size: 1.333em
-    a
-      color: $blue
-      &:hover
-        color: $dark-blue
     .separator
       color: $gray
       font-size: 0.750em
       position: relative
       top: -2px
   .search-result-row
-    border-bottom: 1px solid $blue-gray
+    border-bottom: 1px solid $light-gray
     margin-bottom: 1.111em
     padding-bottom: 1.111em
 
