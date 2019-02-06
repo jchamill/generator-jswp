@@ -25,5 +25,16 @@
         }
       }
     });
+
+    $('.jump-to').on('click', function(e) {
+      var id = $(this).attr('href');
+      if (id.charAt(0) == '#') {
+        var $target = $(id);
+        if ($target.length) {
+          e.preventDefault();
+          $('body, html').animate({scrollTop: $target.offset().top}, 600);
+        }
+      }
+    });
   });
 })(jQuery);
