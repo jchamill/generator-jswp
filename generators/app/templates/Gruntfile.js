@@ -9,9 +9,13 @@ module.exports = function(grunt) {
         src: ['lib/jquery.waypoints.min.js', 'lib/shortcuts/inview.min.js', 'lib/shortcuts/sticky.min.js'],
         dest: 'js/libs/waypoints'
       },
-      'aos': {
-        src: 'dist/*',
-        dest: 'js/libs/aos'
+      'gsap': {
+        src: 'src/minified/TweenMax.min.js',
+        dest: 'js/libs/gsap'
+      },
+      'scrollmagic': {
+        src: ['scrollmagic/minified/ScrollMagic.min.js', 'scrollmagic/minified/plugins/animation.gsap.min.js', 'scrollmagic/minified/plugins/jquery.ScrollMagic.min.js'],
+        dest: 'js/libs/scrollmagic'
       },
       'fitvids': {
         src: 'dist/*',
@@ -57,7 +61,7 @@ module.exports = function(grunt) {
         separator: ';\n'
       },
       vendor: {
-        src: ['js/libs/aos/aos.js', 'js/libs/waypoints/jquery.waypoints.min.js', 'js/libs/magnific-popup/jquery.magnific-popup.min.js', 'js/libs/slick-carousel/slick.min.js'],
+        src: ['js/libs/waypoints/jquery.waypoints.min.js', 'js/libs/magnific-popup/jquery.magnific-popup.min.js', 'js/libs/slick-carousel/slick.min.js', 'js/libs/gsap/TweenMax.min.js', 'js/libs/scrollmagic/ScrollMagic.min.js', 'js/libs/scrollmagic/animation.gsap.min.js'],
         dest: 'vendor.js'
       },
       dist: {
@@ -109,5 +113,4 @@ module.exports = function(grunt) {
     'uglify',
     'watch'
   ]);
-
 };

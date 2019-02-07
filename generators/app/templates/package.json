@@ -16,10 +16,11 @@
     "grunt-postcss": "^0.8.0"
   },
   "dependencies": {
-    "aos": "^2.2.0",
     "fitvids": "^2.0.0",
+    "gsap": "^2.0.2",
     "jquery-lazy": "^1.7.5",
     "magnific-popup": "^1.1.0",
+    "scrollmagic": "^2.0.6",
     "slick-carousel": "^1.7.1",
     "waypoints": "^4.0.1"
   }

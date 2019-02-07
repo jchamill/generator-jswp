@@ -237,6 +237,11 @@ module.exports = class extends Generator {
     );
 
     this.fs.copy(
+      this.templatePath('js/theme/animations.js'),
+      this.destinationPath('js/theme/animations.js')
+    );
+
+    this.fs.copy(
       this.templatePath('js/widgets/faqs.js'),
       this.destinationPath('js/widgets/faqs.js')
     );

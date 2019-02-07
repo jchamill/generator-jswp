@@ -4,8 +4,6 @@
   $(document).ready(function() {
     $('html').removeClass('no-js').addClass('js');
 
-    //AOS.init();
-
     $('.modal-inline').magnificPopup({
       type: 'inline',
       midClick: true,
