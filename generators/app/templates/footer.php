@@ -21,7 +21,7 @@
           'menu_class'     => 'menu'
         ) );
         ?>
-      </nav><!-- .footer-navigation -->
+      </nav>
     <?php endif; ?>
 
     <?php
@@ -33,7 +33,7 @@
     $has_social = ( !empty( $<%= themeKey %>_instagram ) || !empty( $<%= themeKey %>_facebook ) || !empty( $<%= themeKey %>_twitter ) || !empty( $<%= themeKey %>_linkedin ) );
     ?>
     <?php if ( $has_social ): ?>
-      <ul id="social" class="social-menu menu">
+      <ul id="social" class="icon-menu menu">
         <?php if ( !empty($<%= themeKey %>_instagram) ): ?>
           <li><a href="<?php print esc_url($<%= themeKey %>_instagram); ?>" class="icon-instagram"><span class="screen-reader-text">Instagram</span></a></li>
         <?php endif; ?>
@@ -54,8 +54,8 @@
     
     <p id="copyright">&copy; <?php print date('Y'); ?> <%= themeName %></p>
   </div>
-</footer><!-- .site-footer -->
-</div><!-- .site -->
+</footer>
+</div>
 
 <?php if ( has_nav_menu( 'primary' ) ) : ?>
   <nav id="mobile-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', '<%= themeKey %>' ); ?>">
@@ -118,7 +118,7 @@
 
       <div id="mobile-bottom">
         <?php if ( $has_social ): ?>
-          <ul id="mobile-social" class="social-menu menu">
+          <ul id="mobile-social" class="icon-menu menu">
             <?php if ( !empty($<%= themeKey %>_instagram) ): ?>
               <li><a href="<?php print esc_url($<%= themeKey %>_instagram); ?>" class="icon-instagram"><span class="screen-reader-text">Instagram</span></a></li>
             <?php endif; ?>

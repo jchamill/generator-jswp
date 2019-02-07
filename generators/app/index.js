@@ -409,8 +409,8 @@ module.exports = class extends Generator {
     );
 
     this.fs.copyTpl(
-      this.templatePath('template-parts/content-single-post.php'),
-      this.destinationPath('template-parts/content-single-post.php'), {
+      this.templatePath('template-parts/content-single.php'),
+      this.destinationPath('template-parts/content-single.php'), {
         themeKey: this.props.themeKey
       }
     );
