@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="8px" viewBox="0 0 12 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <path d="M3.705,-1.295 L3.705,-1.295 C3.31551495,-0.90551495 3.31517069,-0.274141165 3.70423077,0.115768392 L7.58,4 L3.70423077,7.88423161 C3.31517069,8.27414116 3.31551495,8.90551495 3.705,9.295 L3.705,9.295 C4.09436075,9.68436075 4.72563925,9.68436075 5.115,9.295 L10.41,4 L5.115,-1.295 C4.72563925,-1.68436075 4.09436075,-1.68436075 3.705,-1.295 Z" id="path-1"></path>
+    </defs>
+    <g id="g1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="g2" transform="translate(-963.000000, -475.000000)">
+            <g id="g3" transform="translate(442.000000, 307.000000)">
+                <g id="g4" transform="translate(293.000000, 152.000000)">
+                    <g id="g5" transform="translate(234.500000, 20.000000) rotate(-180.000000) translate(-234.500000, -20.000000) translate(228.000000, 16.000000)">
+                        <mask id="m1" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="u1" fill="#003b71" transform="translate(6.705000, 4.000000) rotate(-90.000000) translate(-6.705000, -4.000000) " xlink:href="#path-1"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

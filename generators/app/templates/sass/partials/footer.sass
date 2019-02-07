@@ -9,24 +9,27 @@
   font-size: 0.889em
   margin-bottom: 1em
 
-#social
+.social-menu
   margin-bottom: 1em
   li
     margin: 0 5px
   a
     display: block
     width: 34px
-    height: 33px
-    background-repeat: no-repeat
-    background-size: contain
-//&.icon-instagram
-  background-image: url('../images/icon-instagram.svg')
-//&.icon-facebook
-  background-image: url('../images/icon-facebook.svg')
-//&.icon-twitter
-  background-image: url('../images/icon-twitter.svg')
-//&.icon-linkedin
-  background-image: url('../images/icon-linkedin.svg')
+    height: 34px
+    border-radius: 50%
+    background: center center no-repeat $link-color
+    &:hover,
+    &:focus
+      background-color: $link-hover-color
+    &.icon-instagram
+      background-image: url('../images/icon-instagram.svg')
+    &.icon-facebook
+      background-image: url('../images/icon-facebook.svg')
+    &.icon-twitter
+      background-image: url('../images/icon-twitter.svg')
+    &.icon-linkedin
+      background-image: url('../images/icon-linkedin.svg')
 
 #copyright
   font-size: 0.889em

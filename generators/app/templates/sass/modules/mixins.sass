@@ -30,8 +30,28 @@
   outline: none
   appearance: none
   cursor: pointer
-  &:hover
+  &:hover,
+  &:focus
     background-color: $link-hover-color
+
+@mixin close-x($color: $black)
+  position: relative
+  width: 22px
+  height: 22px
+  cursor: pointer
+  &:before,
+  &:after
+    content: ""
+    display: block
+    position: absolute
+    top: 0
+    left: 0
+    transform: rotate(45deg)
+    height: 3px
+    width: 100%
+    background-color: $color
+  &:after
+    transform: rotate(-45deg)
 
 @mixin contain($width)
   max-width: $width

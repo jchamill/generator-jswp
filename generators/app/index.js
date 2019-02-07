@@ -62,6 +62,36 @@ module.exports = class extends Generator {
     );
 
     this.fs.copy(
+      this.templatePath('images/icon-facebook.svg'),
+      this.destinationPath('images/icon-facebook.svg')
+    );
+
+    this.fs.copy(
+      this.templatePath('images/icon-twitter.svg'),
+      this.destinationPath('images/icon-twitter.svg')
+    );
+
+    this.fs.copy(
+      this.templatePath('images/icon-instagram.svg'),
+      this.destinationPath('images/icon-instagram.svg')
+    );
+
+    this.fs.copy(
+      this.templatePath('images/icon-linkedin.svg'),
+      this.destinationPath('images/icon-linkedin.svg')
+    );
+
+    this.fs.copy(
+      this.templatePath('images/icon-search.svg'),
+      this.destinationPath('images/icon-search.svg')
+    );
+
+    this.fs.copy(
+      this.templatePath('images/icon-chevron.svg'),
+      this.destinationPath('images/icon-chevron.svg')
+    );
+
+    this.fs.copy(
       this.templatePath('sass/style.sass'),
       this.destinationPath('sass/style.sass')
     );

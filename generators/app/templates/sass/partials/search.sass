@@ -17,17 +17,20 @@
         right: 0
         height: 24px
         width: 24px
-        background: $gray no-repeat
+        background: url('../images/icon-search') center center no-repeat
+      &:focus
+        border-bottom: 2px solid $white
 
 #search-drawer
   position: absolute
   top: 0
   left: 0
+  z-index: 50
   width: 100%
   background-color: $white
-  height: 330px
+  height: 250px
   padding: 0 15px
-  transform: translateY(-345px)
+  transform: translateY(-265px)
   transition: transform 250ms ease
   display: flex
   align-items: center
@@ -37,15 +40,11 @@
     @include grid-media($desktop)
       transform: translateY(0px)
   #search-close
-    @include grid-media($desktop)
-      display: block
-      position: absolute
-      top: 20px
-      right: 20px
-      width: 22px
-      height: 22px
-      background: $gray no-repeat
-      cursor: pointer
+    @include close-x
+    display: block
+    position: absolute
+    top: 25px
+    right: 20px
   .search-form
     @include grid-media($desktop)
       flex-basis: auto
@@ -55,43 +54,49 @@
   label,
   input[type="search"]
     font-family: $header-font-family
-    font-size: 2.722em
-    padding: 0
+    display: block
   input[type="search"]
-    padding-right: 65px
+    font-size: 2em
+    padding: 15px 70px 15px 15px
   .search-submit
     position: absolute
-    top: 21px
-    right: 5px
+    top: 2px
+    right: 2px
     cursor: pointer
     display: block
-    background: $black center center no-repeat
+    background: url('../images/icon-search') center center no-repeat $link-hover-color
     background-size: 33px 33px
-    height: 33px
-    width: 54px
+    height: calc(100% - 4px)
+    width: 55px
     border: 0
 
 #mobile-search
-  text-align: left
   position: relative
   input[type="search"]
     border-bottom: 1px solid $gray
-    color: $link-color
+    background-color: transparent
+    color: $white
     font-family: $header-font-family
     font-size: 1.600em
-    padding: 10px 30px 10px 0
+    padding: 10px 0
     margin: 0
+    text-align: center
+    &:focus
+      border: 0
+      border-bottom: 1px solid $link-hover-color
   .search-submit
     position: absolute
     top: 11px
     right: 0
     cursor: pointer
     display: block
-    background: $gray center center no-repeat
+    background: url('../images/icon-search') center center no-repeat
     background-size: 20px 20px
     height: 20px
     width: 20px
     border: 0
+  input::placeholder
+    color: $white
 
 body.search
   #primary

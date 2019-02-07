@@ -66,8 +66,8 @@ $body_class = ( $slides ) ? 'with-header' : 'without-header';
 
   <header id="site-header">
     <div class="container clearfix">
-      <div id="logo">
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="">
+      <div id="logo" class="logo">
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
           <svg class="" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                width="402.3px" height="98.6px" viewBox="0 0 402.3 98.6" enable-background="new 0 0 402.3 98.6" xml:space="preserve">
 <path class="text" fill="#FFFFFF" d="M115.5,57c0.2,2.9,1.8,3.2,3.6,3.2c4.1,0,4.1-1.6,4.1-3.9V45.1h1.9V57c0,2.4-0.9,4.9-6.1,4.9
@@ -102,7 +102,7 @@ $body_class = ( $slides ) ? 'with-header' : 'without-header';
 	v-5.1h-2.9v-1.5h4.7v7.7c-2,1.1-4.6,1.7-6.7,1.7c-5.3,0-9.3-3.6-9.3-8.6c0-5,4-8.6,9.3-8.6c2.8,0,4.9,0.7,6.4,2.2L400.6,47.8z"/>
             <line class="text" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1.5261" x1="255.7" y1="39.4" x2="255.7" y2="66.8"/>
             <path class="text" fill="#FFFFFF" d="M379.2,58.9L379.2,58.9l0.1-13.9h1.8v16.4h-2.3l-10.6-14.1h-0.1v14.1h-1.8V45h2.3L379.2,58.9z"/>
-            </svg>
+          </svg>
         </a>
       </div>
 
@@ -116,9 +116,6 @@ $body_class = ( $slides ) ? 'with-header' : 'without-header';
         </div>
 
         <nav id="site-navigation" class="clearfix" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', '<%= themeKey %>' ); ?>">
-          <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="">
-            <!-- Insert Mobile SVG Logo Here -->
-          </a>
           <?php
           wp_nav_menu( array(
             'theme_location' => 'primary',
