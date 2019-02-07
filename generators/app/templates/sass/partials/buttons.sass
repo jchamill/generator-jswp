@@ -23,6 +23,25 @@ a.btn
 a.btn-clear
   color: $link-color
 
+.btn-arrow
+  display: inline-block
+  text-decoration: none
+  font-weight: bold
+  text-transform: uppercase
+  &:after
+    content: ""
+    display: inline-block
+    width: 15px
+    height: 13px
+    background: url('../images/icon-arrow.svg') center center no-repeat
+    background-size: 15px 13px
+    vertical-align: middle
+    margin: -2px 0 0 8px
+  &:hover,
+  &:focus
+    &:after
+      background-image: url('../images/icon-arrow-hover.svg')
+
 .buttons .btn
   margin: 0 5px 1em 0
   @include grid-media($desktop)

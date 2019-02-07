@@ -92,6 +92,16 @@ module.exports = class extends Generator {
     );
 
     this.fs.copy(
+      this.templatePath('images/icon-arrow.svg'),
+      this.destinationPath('images/icon-arrow.svg')
+    );
+
+    this.fs.copy(
+      this.templatePath('images/icon-arrow-hover.svg'),
+      this.destinationPath('images/icon-arrow-hover.svg')
+    );
+
+    this.fs.copy(
       this.templatePath('sass/style.sass'),
       this.destinationPath('sass/style.sass')
     );
