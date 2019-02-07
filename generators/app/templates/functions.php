@@ -227,20 +227,20 @@ require get_template_directory() . '/inc/template-tags.php';
  * @return string A source size value for use in a content image 'sizes' attribute.
  */
 function <%= themeKey %>_content_image_sizes_attr( $sizes, $size ) {
-  // $width = $size[0];
-  //
-  // 840 <= $width && $sizes = '(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 1362px) 62vw, 840px';
-  //
-  // if ( 'page' === get_post_type() ) {
-  //   840 > $width && $sizes = '(max-width: ' . $width . 'px) 85vw, ' . $width . 'px';
-  // } else {
-  //   840 > $width && 600 <= $width && $sizes = '(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 984px) 61vw, (max-width: 1362px) 45vw, 600px';
-  //   600 > $width && $sizes = '(max-width: ' . $width . 'px) 85vw, ' . $width . 'px';
-  // }
+   $width = $size[0];
+
+   840 <= $width && $sizes = '(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 1362px) 62vw, 840px';
+
+   if ( 'page' === get_post_type() ) {
+     840 > $width && $sizes = '(max-width: ' . $width . 'px) 85vw, ' . $width . 'px';
+   } else {
+     840 > $width && 600 <= $width && $sizes = '(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 984px) 61vw, (max-width: 1362px) 45vw, 600px';
+     600 > $width && $sizes = '(max-width: ' . $width . 'px) 85vw, ' . $width . 'px';
+   }
 
   return '';
 }
-add_filter( 'wp_calculate_image_sizes', '<%= themeKey %>_content_image_sizes_attr', 10 , 2 );
+//add_filter( 'wp_calculate_image_sizes', '<%= themeKey %>_content_image_sizes_attr', 10 , 2 );
 
 /**
  * Add custom image sizes attribute to enhance responsive image functionality
@@ -258,7 +258,7 @@ function <%= themeKey %>_post_thumbnail_sizes_attr( $attr, $attachment, $size ) 
   unset($attr['sizes']);
   return $attr;
 }
-add_filter( 'wp_get_attachment_image_attributes', '<%= themeKey %>_post_thumbnail_sizes_attr', 10 , 3 );
+//add_filter( 'wp_get_attachment_image_attributes', '<%= themeKey %>_post_thumbnail_sizes_attr', 10 , 3 );
 
 /**
  * Filter the except length to 20 characters.
